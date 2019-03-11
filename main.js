@@ -60,6 +60,10 @@ function appendToList(event) {
     // Hint: here (and elsewhere), watch the TYPE of the value above.
     // Research `typeof` operator if you're not sure.
 
+    // Set the input field back to blank.
+    resetInput();
+
+
     // Update our html.
 
 
@@ -99,6 +103,15 @@ function clearList(event) {
     // Update our html.
     
 }
+
+//My codes
+function resetInput() {
+    // Resets input field to blank.
+    document.querySelector('#list-number').value = '';
+}
+
+
+
 
 /*
 # ========================================================
