@@ -77,10 +77,7 @@ function appendToList(event) {
     }
     console.log(numbers);
 
-
-
     // Update our html.
-
 
 }
 // Remove from the list.
@@ -88,10 +85,11 @@ function removeFromList(event) {
     // Make sure page doesn't reload on button press.
     event.preventDefault();
 
-    // Get the index we'll remove from the input field.
-    let index = document.querySelector('').value;
+    // Get the index in the list from which we'll remove.
+    let index = document.querySelector('#').value;
 
     // Remove the number at that index from the list.
+    
 
     /*
         ### Hints:
@@ -113,10 +111,12 @@ function clearList(event) {
     event.preventDefault();
 
     // Clear the array of all values.
-
-
+    for(let i = 0; i < numbers.length; i++) {
+        numbers[i] = '';
+    }
+    console.log(numbers);
     // Update our html.
-    
+    updateUL();
 }
 
 //My codes
@@ -206,7 +206,7 @@ function updateUL() {
 }
 
 function clearUL() {
-    const ul = document.querySelector('');
+    const ul = document.querySelector('#number-list');
     while(ul.hasChildNodes()) {
         ul.removeChild(ul.firstChild);
     }
