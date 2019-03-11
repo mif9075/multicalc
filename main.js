@@ -111,8 +111,8 @@ function clearList(event) {
     // Clear the array of all values.
     numbers = [];
     // Update our html.
-    updateUL();
     console.log(numbers);
+    updateUL();
 }
 
 //My codes
@@ -138,8 +138,9 @@ function addToAll(event) {
     for(let i = 0; i < numbers.length; i++) {
         numbers[i] = parseFloat(numbers[i]) + parseFloat(numberToAdd);
     }
-    console.log(numbers);
+    
     // Update our html.
+    console.log(numbers);
     updateUL();
 }
 
@@ -163,13 +164,16 @@ function multiplyByAll(event) {
     // Make sure page doesn't reload on button press.
     event.preventDefault();
     
-    // Grab value to add.
+    // Grab value to multiply.
     let numberToMultiply = document.querySelector('#numberForMath').value;
-    
-    // Add value to everything on the list.
-    
-    
+
+    // Grab value to Multiply.
+    for(let i = 0; i < numbers.length; i++) {
+        numbers[i] = parseFloat(numbers[i]) * parseFloat(numberToMultiply);
+    }
     // Update our html.
+    console.log(numbers);
+    updateUL();
     
 }
 
