@@ -181,13 +181,17 @@ function divideFromAll(event) {
     // Make sure page doesn't reload on button press.
     event.preventDefault();
 
-    // Grab value to add.
+    // Grab value to divide.
     let numberToDivide = document.querySelector('#numberForMath').value;
 
     // Divide value from everything on the list.
-    
+    for(let i = 0; i < numbers.length; i++) {
+        numbers[i] = parseFloat(numbers[i]) / parseFloat(numberToDivide);
+    }
 
     // Update our html.
+    console.log(numbers);
+    updateUL();
     
 }
 
