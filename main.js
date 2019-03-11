@@ -60,9 +60,13 @@ function appendToList(event) {
     // Hint: here (and elsewhere), watch the TYPE of the value above.
     // Research `typeof` operator if you're not sure.
 
+    //My Codes
+
     // Set the input field back to blank.
     resetInput();
 
+    // Add the item to the <ul>.
+    addToUL(number);
 
     // Update our html.
 
@@ -199,8 +203,8 @@ function clearUL() {
 
 // Append to the UL.
 function addToUL(numberToAppend) {
-    const UL = document.querySelector('');
-    const newLI = document.createElement('');
+    const UL = document.querySelector('#number-list');
+    const newLI = document.createElement('li');
     newLI.innerText = numberToAppend;
     UL.appendChild(newLI);
 }
