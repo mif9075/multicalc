@@ -140,13 +140,15 @@ function addToAll(event) {
     event.preventDefault();
 
     // Grab value to add.
-    let numberToAdd = document.querySelector('').value;
+    let numberToAdd = document.querySelector('#numberForMath').value;
 
     // Add value to everything on the list.
-
-
+    for(let i = 0; i < numbers.length; i++) {
+        numbers[i] = parseFloat(numbers[i]) + parseFloat(numberToAdd);
+    }
+    console.log(numbers);
     // Update our html.
-
+    updateUL();
 }
 
 function subtractFromAll(event) {
@@ -154,7 +156,7 @@ function subtractFromAll(event) {
     event.preventDefault();
     
     // Grab value to add.
-    let numberToSubtract = document.querySelector('').value;
+    let numberToSubtract = document.querySelector('#numberForMath').value;
     
     // Add value to everything on the list.
   
@@ -168,7 +170,7 @@ function multiplyByAll(event) {
     event.preventDefault();
     
     // Grab value to add.
-    let numberToMultiply = document.querySelector('').value;
+    let numberToMultiply = document.querySelector('#numberForMath').value;
     
     // Add value to everything on the list.
     
@@ -182,7 +184,7 @@ function divideFromAll(event) {
     event.preventDefault();
 
     // Grab value to add.
-    let numberToDivide = document.querySelector('').value;
+    let numberToDivide = document.querySelector('#numberForMath').value;
 
     // Divide value from everything on the list.
     
