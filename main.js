@@ -102,8 +102,6 @@ function removeFromList(event) {
     */
 
     // Update our html.
-
-
 }
 
 function clearList(event) {
@@ -111,12 +109,10 @@ function clearList(event) {
     event.preventDefault();
 
     // Clear the array of all values.
-    for(let i = 0; i < numbers.length; i++) {
-        numbers[i] = '';
-    }
-    console.log(numbers);
+    numbers = [];
     // Update our html.
     updateUL();
+    console.log(numbers);
 }
 
 //My codes
@@ -125,15 +121,11 @@ function resetInput() {
     document.querySelector('#list-number').value = '';
 }
 
-
-
-
 /*
 # ========================================================
 # = Math Section
 # ========================================================
 */
-
 
 function addToAll(event) {
     // Make sure page doesn't reload on button press.
