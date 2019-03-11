@@ -68,6 +68,11 @@ function appendToList(event) {
     // Add the item to the <ul>.
     addToUL(number);
 
+    // Now comes your part: add the item to the list.
+    numbers.push(number);
+    console.log(numbers);
+
+
     // Update our html.
 
 
