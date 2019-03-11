@@ -155,14 +155,16 @@ function subtractFromAll(event) {
     // Make sure page doesn't reload on button press.
     event.preventDefault();
     
-    // Grab value to add.
+    // Grab value to subtract.
     let numberToSubtract = document.querySelector('#numberForMath').value;
     
-    // Add value to everything on the list.
-  
-
+    // Subtract value to everything on the list.
+    for(let i = 0; i < numbers.length; i++) {
+        numbers[i] = parseFloat(numbers[i]) - parseFloat(numberToSubtract);
+    }
     // Update our html.
-
+    console.log(numbers);
+    updateUL();
 }
 
 function multiplyByAll(event) {
