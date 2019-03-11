@@ -59,18 +59,24 @@ function appendToList(event) {
     // Append the number to our array.
     // Hint: here (and elsewhere), watch the TYPE of the value above.
     // Research `typeof` operator if you're not sure.
-
+    
     //My Codes
 
     // Set the input field back to blank.
     resetInput();
 
     // Add the item to the <ul>.
-    addToUL(number);
-
-    // Now comes your part: add the item to the list.
-    numbers.push(number);
+    if(isNaN(number)  || number===''){
+        resetInput();
+    }
+    
+    else{
+        // Now comes your part: add the item to the list.
+        addToUL(number);
+        numbers.push(number);
+    }
     console.log(numbers);
+
 
 
     // Update our html.
