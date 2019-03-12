@@ -86,12 +86,20 @@ function removeFromList(event) {
     event.preventDefault();
 
     // Get the index in the list from which we'll remove.
-    let index = document.querySelector('#number-list').value;
+    let index = document.querySelector('#list-number').value;
+
+    if(isNaN(index)  || index===''){
+        resetInput();
+    }
+    
+    else{
+
 
     // Remove the number at that index from the list.
-    for(let i = 0; i < index.length; i++) {
-        index.pop(index);
+            numbers.splice(index , 1);
+
     }
+            console.log(numbers);
 
     /*
         ### Hints:
