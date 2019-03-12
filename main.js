@@ -97,7 +97,7 @@ function removeFromList(event) {
         resetInput();
     }
     
-    else{
+    else if (index>=0){
     // Remove the number at that index from the list.
             numbers.splice(index , 1);
     }
@@ -249,8 +249,6 @@ function exponentiationToAll (event) {
         console.log(numbers);
         updateUL();
 }
-
-
 
 /*
 # ========================================================
