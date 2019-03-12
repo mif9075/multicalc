@@ -127,13 +127,17 @@ function removeFromArray(event) {
     // Get the index in the list from which we'll remove.
     let array = document.querySelector('#list-number').value;
 
-    if(isNaN(array)  || array===''){
+    if(isNaN(array) || array === ''){
         resetInput();
     }
     
-    else if (array>=0){
-    // Remove the number at that index from the list.
-            numbers.splice(array , 1);
+    else {
+    // Remove the number at that array from the list. 
+        for (let i=0; i < numbers.length; i++){
+            if (array === numbers[i]) {
+                numbers.splice(i , 1);
+            }
+            }
     }
             console.log(numbers);
             updateUL();
