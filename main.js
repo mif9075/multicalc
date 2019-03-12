@@ -86,10 +86,12 @@ function removeFromList(event) {
     event.preventDefault();
 
     // Get the index in the list from which we'll remove.
-    let index = document.querySelector('#').value;
+    let index = document.querySelector('#number-list').value;
 
     // Remove the number at that index from the list.
-    
+    for(let i = 0; i < index.length; i++) {
+        index.pop(index);
+    }
 
     /*
         ### Hints:
@@ -132,13 +134,22 @@ function addToAll(event) {
     event.preventDefault();
 
     // Grab value to add.
+
     let numberToAdd = document.querySelector('#numberForMath').value;
+
+    if(isNaN(numberToAdd)  || numberToAdd===''){
+        resetInput();
+    }
+    
+    else{
+        
+    
 
     // Add value to everything on the list.
     for(let i = 0; i < numbers.length; i++) {
         numbers[i] = parseFloat(numbers[i]) + parseFloat(numberToAdd);
     }
-    
+}  
     // Update our html.
     console.log(numbers);
     updateUL();
@@ -151,9 +162,17 @@ function subtractFromAll(event) {
     // Grab value to subtract.
     let numberToSubtract = document.querySelector('#numberForMath').value;
     
+
+    if(isNaN(numberToSubtract)  || numberToSubtract===''){
+        resetInput();
+    }
+    
+    else{
+        
     // Subtract value to everything on the list.
     for(let i = 0; i < numbers.length; i++) {
         numbers[i] = parseFloat(numbers[i]) - parseFloat(numberToSubtract);
+    }
     }
     // Update our html.
     console.log(numbers);
@@ -167,9 +186,17 @@ function multiplyByAll(event) {
     // Grab value to multiply.
     let numberToMultiply = document.querySelector('#numberForMath').value;
 
+    if(isNaN(numberToMultiply)  || numberToMultiply===''){
+        resetInput();
+    }
+    
+    else{
+        
+    
     // Grab value to Multiply.
     for(let i = 0; i < numbers.length; i++) {
         numbers[i] = parseFloat(numbers[i]) * parseFloat(numberToMultiply);
+    }
     }
     // Update our html.
     console.log(numbers);
