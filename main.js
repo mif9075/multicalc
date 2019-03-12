@@ -186,7 +186,7 @@ function multiplyByAll(event) {
     // Grab value to multiply.
     let numberToMultiply = document.querySelector('#numberForMath').value;
 
-    if(isNaN(numberToMultiply)  || numberToMultiply===''){
+    if(isNaN(numberToMultiply) || numberToMultiply===''){
         resetInput();
     }
     
@@ -210,12 +210,17 @@ function divideFromAll(event) {
 
     // Grab value to divide.
     let numberToDivide = document.querySelector('#numberForMath').value;
+    if(isNaN(numberToDivide)  || numberToDivide === ''){
+        resetInput();
+    }
+    
+    else{
 
     // Divide value from everything on the list.
     for(let i = 0; i < numbers.length; i++) {
         numbers[i] = parseFloat(numbers[i]) / parseFloat(numberToDivide);
     }
-
+}
     // Update our html.
     console.log(numbers);
     updateUL();
