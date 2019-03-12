@@ -40,6 +40,11 @@ function init() {
     // When the user clicks the divide button, divide the value from each item.
     document.querySelector('#divide')
         .addEventListener('click', divideFromAll);
+
+    // When the user clicks the expentiation button, exponentiate the value from each item.
+    document.querySelector('#exponentiation')
+        .addEventListener('click', exponentiationToAll);
+
 }
 
 /*
@@ -224,6 +229,28 @@ function divideFromAll(event) {
     console.log(numbers);
     updateUL();
 }
+
+function exponentiationToAll (event) {
+    // Make sure page doesn't reload on button press.
+    event.preventDefault();
+
+    // Grab value to exponentiate.
+    let numberToExponentiate = document.querySelector('#numberForMath').value
+    if(isNaN(numberToExponentiate)  || numberToExponentiate === ''){
+        resetInput();
+    }
+    
+    else{
+        for(let i = 0; i < numbers.length; i++) {
+            numbers[i] = parseFloat(numbers[i]) ** parseFloat(numberToExponentiate);
+            }
+        }
+        // Update our html.
+        console.log(numbers);
+        updateUL();
+}
+
+
 
 /*
 # ========================================================
