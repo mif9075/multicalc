@@ -78,8 +78,8 @@ function appendToList(event) {
     console.log(numbers);
 
     // Update our html.
-
 }
+
 // Remove from the list.
 function removeFromList(event) {
     // Make sure page doesn't reload on button press.
@@ -93,13 +93,11 @@ function removeFromList(event) {
     }
     
     else{
-
-
     // Remove the number at that index from the list.
             numbers.splice(index , 1);
-
     }
             console.log(numbers);
+            updateUL();
 
     /*
         ### Hints:
@@ -150,14 +148,11 @@ function addToAll(event) {
     }
     
     else{
-        
-    
-
     // Add value to everything on the list.
     for(let i = 0; i < numbers.length; i++) {
         numbers[i] = parseFloat(numbers[i]) + parseFloat(numberToAdd);
-    }
-}  
+        }
+    }  
     // Update our html.
     console.log(numbers);
     updateUL();
@@ -170,17 +165,15 @@ function subtractFromAll(event) {
     // Grab value to subtract.
     let numberToSubtract = document.querySelector('#numberForMath').value;
     
-
     if(isNaN(numberToSubtract)  || numberToSubtract===''){
         resetInput();
     }
     
     else{
-        
     // Subtract value to everything on the list.
     for(let i = 0; i < numbers.length; i++) {
         numbers[i] = parseFloat(numbers[i]) - parseFloat(numberToSubtract);
-    }
+        }
     }
     // Update our html.
     console.log(numbers);
@@ -200,7 +193,6 @@ function multiplyByAll(event) {
     
     else{
         
-    
     // Grab value to Multiply.
     for(let i = 0; i < numbers.length; i++) {
         numbers[i] = parseFloat(numbers[i]) * parseFloat(numberToMultiply);
@@ -209,7 +201,6 @@ function multiplyByAll(event) {
     // Update our html.
     console.log(numbers);
     updateUL();
-    
 }
 
 function divideFromAll(event) {
@@ -227,14 +218,12 @@ function divideFromAll(event) {
     // Divide value from everything on the list.
     for(let i = 0; i < numbers.length; i++) {
         numbers[i] = parseFloat(numbers[i]) / parseFloat(numberToDivide);
+        }
     }
-}
     // Update our html.
     console.log(numbers);
     updateUL();
-    
 }
-
 
 /*
 # ========================================================
