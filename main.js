@@ -18,9 +18,13 @@ function init() {
         .addEventListener('click', appendToList);
 
     // When the user clicks the remove button, remove the number at the index given from the list.
-    document.querySelector('#remove')
-        .addEventListener('click', removeFromList);
+    document.querySelector('#removeIndex')
+        .addEventListener('click', removeFromIndex);
 
+    // When the user clicks the remove button, remove the number at the index given from the list.
+    document.querySelector('#removeArray')
+        .addEventListener('click', removeFromArray);
+    
     // When the user clicks the clear button, remove all items from the list.
     document.querySelector('#clear')
         .addEventListener('click', clearList);
@@ -64,7 +68,6 @@ function appendToList(event) {
     // Append the number to our array.
     // Hint: here (and elsewhere), watch the TYPE of the value above.
     // Research `typeof` operator if you're not sure.
-    
     //My Codes
 
     // Set the input field back to blank.
@@ -86,7 +89,7 @@ function appendToList(event) {
 }
 
 // Remove from the list.
-function removeFromList(event) {
+function removeFromIndex(event) {
     // Make sure page doesn't reload on button press.
     event.preventDefault();
 
@@ -116,6 +119,26 @@ function removeFromList(event) {
 
     // Update our html.
 }
+
+function removeFromArray(event) {
+    // Make sure page doesn't reload on button press.
+    event.preventDefault();
+
+    // Get the index in the list from which we'll remove.
+    let array = document.querySelector('#list-number').value;
+
+    if(isNaN(array)  || array===''){
+        resetInput();
+    }
+    
+    else if (array>=0){
+    // Remove the number at that index from the list.
+            numbers.splice(array , 1);
+    }
+            console.log(numbers);
+            updateUL();
+}
+
 
 function clearList(event) {
     // Make sure page doesn't reload on button press.
